@@ -1,15 +1,15 @@
-var puntos = 0;
+let puntos = 0;
 
 function hacerJuego() {
-    for (var i = 0; i < 10; i++) {
-        var pregunta = obtenerPregunta(i);
-        var respuestaUsuario = prompt("Pregunta " + (i + 1) + ": " + pregunta.pregunta).trim().toLowerCase();
+    for (let i = 0; i < 10; i++) {
+        let pregunta = obtenerPregunta(i);
+        let respuestaUsuario = prompt("Pregunta " + (i + 1) + ": " + pregunta.pregunta).trim().toLowerCase();
         
         if (respuestaUsuario === pregunta.respuestaCorrecta) {
             puntos += 10;
-            alert(" ¡Increíble! Sumas 10 puntos. Puntuación actual: " + puntos);
+            alert("¡Increíble! Sumas 10 puntos. Puntuación actual: " + puntos);
         } else {
-            alert( " Fallaste:( La respuesta correcta era: " + pregunta.respuestaCorrecta + ". Puntuación actual: " + puntos);
+            alert("Fallaste :( La respuesta correcta era: " + pregunta.respuestaCorrecta + ". Puntuación actual: " + puntos);
         }
     }
     
@@ -17,7 +17,7 @@ function hacerJuego() {
 }
 
 function obtenerPregunta(numero) {
-    var preguntas = [
+    let preguntas = [
         {
             pregunta: "¿Capital de Chile?",
             respuestaCorrecta: "santiago"
@@ -49,7 +49,7 @@ function obtenerPregunta(numero) {
         },
 
         {
-            pregunta: "¿Cuál es el país más poblado de Latinoamerica?",
+            pregunta: "¿Cuál es el país más poblado de Latinoamérica?",
             respuestaCorrecta: "brasil"
         },
 
@@ -71,6 +71,5 @@ function obtenerPregunta(numero) {
     
     return preguntas[numero];
 }
-
 
 hacerJuego();
